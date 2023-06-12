@@ -12,7 +12,7 @@ app.use(express.static('public'));
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname,'/index.html'));
 });
-app.use('/.netlify/functions/api', router);
+app.use('/', router);
 
 app.use((req,res,next) => {
     res.status(404).send('Not Found');
