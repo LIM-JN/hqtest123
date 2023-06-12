@@ -1,2 +1,2 @@
 [build]
-command = "npm install && parcel build index.js"
+autoLaunch = true
