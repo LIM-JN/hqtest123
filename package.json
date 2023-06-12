@@ -4,7 +4,8 @@
   "description": "descripteion is not allowed ",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "start": "NODE_ENV=production PORT=80 start index.js -i 0",
+    "test": "jest"
   },
   "author": "me",
   "license": "ISC",
