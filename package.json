@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "descripteion is not allowed ",
   "scripts": {
-    "start": "start index.js",
-    "test": "nodemon index.js"
+    "test": "nodemon app.js"
   },
   "author": "me",
   "license": "ISC",
@@ -26,6 +25,7 @@
     "http": "^0.0.1-security",
     "https": "^1.0.0",
     "net": "^1.0.2",
+    "netlify-lambda": "^2.0.16",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "path-browserify": "^1.0.1",
@@ -33,6 +33,7 @@
     "querystring": "^0.2.1",
     "querystring-es3": "^0.2.1",
     "readline": "^1.3.0",
+    "serverless-http": "^3.2.0",
     "stream": "^0.0.2",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",

@@ -1,2 +1,3 @@
 [build]
 autoLaunch = true
+functions = "functions"
