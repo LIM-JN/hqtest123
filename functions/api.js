@@ -1,26 +1,13 @@
-const express = require('express');
-const serverless = require('serverless-http');
-const path = require('path');
-const app = express();
-const router = express.Router();
+// YOUR_BASE_DIRECTORY/netlify/functions/api.ts
 
-app.set('port', process.env.PORT || 3000);
-app.set('view engine','html')
+import express, { Router } from 'express';
+import serverless from 'serverless-http';
 
-app.use(express.static('public'));
+const api = express();
 
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,'/index.html'));
-});
-app.use('/', router);
+const router = Router();
+router.get('/hello', (req, res) => res.send('Hello World!'));
 
-app.use((req,res,next) => {
-    res.status(404).send('Not Found');
-})
+api.use('/api/', router);
 
-app.listen(app.get('port'), () => {
-  console.log(app.get('port'), '번 포트에서 대기중');
-});
-
-app.use('/.netlify/functions/api', router)
-module.exports.handler = serverless(app)
+export const handler = serverless(api);

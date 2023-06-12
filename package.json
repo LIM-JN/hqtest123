@@ -9,6 +9,8 @@
   "author": "me",
   "license": "ISC",
   "dependencies": {
+    "@netlify/functions": "^1.6.0",
+    "@types/express": "^4.17.17",
     "assert": "^2.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
