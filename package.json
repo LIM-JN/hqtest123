@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "descripteion is not allowed ",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "nodemon app.js",
+    "build": "netlify deploy --prod"
   },
   "author": "me",
   "license": "ISC",
