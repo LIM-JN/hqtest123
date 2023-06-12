@@ -13,6 +13,10 @@ router.get('/', (req, res) => {
 });
 app.use('/', router);
 
+app.use((req,res,next) => {
+    res.status(404).send('Not Found');
+})
+
 app.listen(app.get('port'), () => {
   console.log(app.get('port'), '번 포트에서 대기중');
 });
