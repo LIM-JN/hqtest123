@@ -1,12 +1,18 @@
 const express = require('express');
-const app = express()
+const path = require('path');
+const app = express();
+const router = express.Router();
 
-app.set('port',process.env.PORT || 3000)
+app.set('port', process.env.PORT || 3000);
+app.set('view engine','html')
 
-app.get('/',(res,req) => {
-    app.render('./dist/index.html')
-})
+app.use(express.static('public'));
 
-app.listen(3000,() => {
-    console.log(app.get('port'),'번 포트에서 대기중')
-})
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,'/index.html'));
+});
+app.use('/', router);
+
+app.listen(app.get('port'), () => {
+  console.log(app.get('port'), '번 포트에서 대기중');
+});
