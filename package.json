@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "descripteion is not allowed ",
   "scripts": {
-    "start": "NODE_ENV=production PORT=80 start index.js -i 0",
+    "start": "start index.js",
     "test": "nodemon index.js"
   },
   "author": "me",
@@ -15,6 +15,7 @@
     "child_process": "^1.0.2",
     "cluster": "^0.7.7",
     "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
     "dgram": "^1.0.1",
     "dns": "^0.2.2",
     "domain": "^0.0.1",
