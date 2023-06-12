@@ -4,7 +4,7 @@ const app = express()
 app.set('port',process.env.PORT || 3000)
 
 app.get('/',(res,req) => {
-    app.render('index.html')
+    app.render('./build/index.html')
 })
 
 app.listen(3000,() => {
