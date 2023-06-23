@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "descripteion is not allowed ",
   "scripts": {
-    "test": "nodemon index.js",
+    "test": "nodemon ./functions/api.js",
     "build": "netlify deploy --prod"
   },
   "author": "me",

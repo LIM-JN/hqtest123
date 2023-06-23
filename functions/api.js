@@ -1,14 +1,35 @@
 // YOUR_BASE_DIRECTORY/netlify/functions/api.ts
+const express = require('express');
+const serverless = require('serverless-http')
+const path = require('path');
+const morgan = require('morgan');
 
-import express, { Router } from 'express';
-import serverless from 'serverless-http';
+const currentFolder = __dirname; // 현재 파일의 폴더 경로를 가져옴
+const publicFolder = path.resolve(currentFolder, '..', 'public'); // 상위 폴더와 'public'을 결합
 
 const api = express();
 
-const router = Router();
-router.get('/hello', (req, res) => res.send('Hello World!'));
-router.get('/', (req, res) => res.send('not Hello'));
+api.set('view engine','html');
 
+const router = express.Router();
+
+router.use(express.static(publicFolder))
+
+
+router.get('/hello', (req, res) => res.send('Hello World!'));
+router.get('/', (req, res) => res.render('index.html'));
+
+api.use(morgan('dev'));
+api.use(express.static(publicFolder));
+api.use(express.json());
+api.use(express.urlencoded({extended: false}));
 api.use('/', router);
 
-export const handler = serverless(api);
+
+module.exports.handler = serverless(api);
+
+// api.set('port',3000)
+
+// api.listen(api.get('port'), () => {
+//     console.log(api.get('port'), '번 포트에서 대기중');
+//   });
