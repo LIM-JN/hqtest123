@@ -3,13 +3,18 @@ const express = require('express');
 const serverless = require('serverless-http')
 const path = require('path');
 const morgan = require('morgan');
-
+const nunjucks = require('nunjucks');
 const currentFolder = __dirname; // 현재 파일의 폴더 경로를 가져옴
 const publicFolder = path.resolve(currentFolder, '..', 'public'); // 상위 폴더와 'public'을 결합
 
 const api = express();
 
-api.set('view engine','html');
+nunjucks.configure('views', {
+    autoescape: true,
+    express: api
+  });
+  
+api.set('view engine', 'html');
 
 const router = express.Router();
 
