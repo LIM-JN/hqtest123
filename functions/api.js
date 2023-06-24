@@ -9,7 +9,6 @@ const views = '/opt/build/repo/views'
 
 const api = express();
 
-api.set('views', '/opt/build/repo/views');
 api.set('view engine', 'html');
 
 nunjucks.configure(views,{
@@ -21,7 +20,7 @@ const router = express.Router();
 
 
 router.get('/hello', (req, res) => res.send('Hello World!'));
-router.get('/', (req, res) => res.render('index'));
+router.get('/', (req, res) => res.render('/opt/build/repo/views/index'));
 
 api.use(morgan('dev'));
 api.use(express.static(publicFolder));
