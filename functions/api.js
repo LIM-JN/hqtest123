@@ -22,7 +22,7 @@ router.use(express.static(publicFolder))
 
 
 router.get('/hello', (req, res) => res.send('Hello World!'));
-router.get('/', (req, res) => res.render('../public/index.html'));
+router.get('/', (req, res) => res.render('../build/index.html'));
 
 api.use(morgan('dev'));
 api.use(express.static(publicFolder));
