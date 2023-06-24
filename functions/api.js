@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const currentFolder = __dirname; // 현재 파일의 폴더 경로를 가져옴
 const publicFolder = path.resolve(currentFolder, '..', 'public'); // 상위 폴더와 'public'을 결합
+const views = path.resolve(currentFolder, '..', 'views');
 
 const api = express();
 
@@ -15,6 +16,7 @@ nunjucks.configure('views', {
   });
   
 api.set('view engine', 'html');
+app.set('views', views);
 
 const router = express.Router();
 
@@ -22,7 +24,7 @@ router.use(express.static(publicFolder))
 
 
 router.get('/hello', (req, res) => res.send('Hello World!'));
-router.get('/', (req, res) => res.render('/public/index.html'));
+router.get('/', (req, res) => res.render('index'));
 
 api.use(morgan('dev'));
 api.use(express.static(publicFolder));
