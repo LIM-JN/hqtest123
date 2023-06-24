@@ -12,7 +12,7 @@ const api = express();
 
   
 api.set('view engine', 'html');
-app.set('views', views);
+api.set('views', views);
 
 const router = express.Router();
 
