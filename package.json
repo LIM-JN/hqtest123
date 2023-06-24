@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "descripteion is not allowed ",
   "scripts": {
-    "test": "nodemon ./functions/api.js"
+    "start":"nodemon app"
   },
   "author": "me",
   "license": "ISC",
