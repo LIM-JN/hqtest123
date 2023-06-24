@@ -4,7 +4,7 @@ const serverless = require('serverless-http')
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
-const publicFolder = path.resolve(__dirname, '..', 'public'); // 상위 폴더와 'public'을 결합
+const publicFolder = '/opt/build/repo/public'; 
 const views = path.resolve(__dirname, '..', 'views');
 
 const api = express();
