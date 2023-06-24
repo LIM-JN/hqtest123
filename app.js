@@ -17,6 +17,7 @@ const router = express.Router();
 router.get('/hello', (req, res) => res.send('Hello World!'));
 router.get('/', (req, res) => res.render('index'));
 
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/', router);
