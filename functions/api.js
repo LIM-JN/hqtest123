@@ -4,12 +4,12 @@ const serverless = require('serverless-http')
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
-const publicFolder = '/opt/build/repo/public'; 
-const views = path.resolve(__dirname, '..', 'views');
+const publicFolder = '/opt/build/repo'; 
+const views = '/opt/build/repo/views'
 
 const api = express();
 
-api.set('views', publicFolder);
+api.set('views', '/opt/build/repo/views');
 api.set('view engine', 'html');
 
 nunjucks.configure(views,{
@@ -18,8 +18,6 @@ nunjucks.configure(views,{
 })
 
 const router = express.Router();
-
-router.use(express.static(publicFolder))
 
 
 router.get('/hello', (req, res) => res.send('Hello World!'));
