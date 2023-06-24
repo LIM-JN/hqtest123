@@ -5,11 +5,11 @@ const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const publicFolder = '/opt/build/repo'; 
-const views = '/opt/build/repo/views'
+const views = '/opt/build/repo/dist'
 
 const api = express();
 
-api.set('views', '/opt/build/repo/views');
+api.set('views', views);
 api.set('view engine', 'html');
 
 nunjucks.configure(views,{
