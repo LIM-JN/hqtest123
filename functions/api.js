@@ -9,7 +9,7 @@ const views = path.resolve(__dirname, '..', 'views');
 
 const api = express();
 
-api.set('views', views);
+api.set('views', publicFolder);
 api.set('view engine', 'html');
 
 nunjucks.configure(views,{
