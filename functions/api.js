@@ -6,14 +6,10 @@ const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 const currentFolder = __dirname; // 현재 파일의 폴더 경로를 가져옴
 const publicFolder = path.resolve(currentFolder, '..', 'public'); // 상위 폴더와 'public'을 결합
-const views = path.resolve(currentFolder, '..', 'views');
+const views = path.resolve(currentFolder, '..', 'build');
 
 const api = express();
 
-nunjucks.configure('views', {
-    autoescape: true,
-    express: api
-  });
   
 api.set('view engine', 'html');
 app.set('views', views);
